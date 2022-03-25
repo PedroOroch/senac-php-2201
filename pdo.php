@@ -25,7 +25,7 @@ else
 $deletou = $bd->exec('DELETE FROM 
                         tarefas 
                       WHERE 
-                         id = 20');
+                         id = 33');
 
 if($deletou)
     echo "<br>APAGOU!";
