@@ -15,11 +15,11 @@ $aluno = ['nome' => 'Oroch' , 'matricula' => '123123'];
 
 function cadastraAluno(array $aluno):bool {
 
-    $f = fopen('alunos.csv', 'a');
-    $escreveu = fwrite($f, "{$aluno['matricula']};\"{$aluno['nome']}\"\n");
-    fclose($f);
+    $f = fopen('alunos.csv', 'a'); //abre um arquivo
+    $escreveu = fwrite($f, "{$aluno['matricula']};\"{$aluno['nome']}\"\n");//escreve codigo da string para o arquivo
+    fclose($f);//fecha um arquivo
 
-    if($escreveu)
+    if($escreveu)//estrutura condicional dizendo se variavel escreveu ou nao no caso
         return true;
     else
         return false;
