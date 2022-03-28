@@ -6,20 +6,20 @@
     Comentário de Bloco
 */
 
-define( 'XPTO' , 'Valor sempre igual' );
+define( 'XPTO' , 'Valor sempre igual' ); //valor constante
 
 echo XPTO;
 
-$num = 2;
+$num = 2; // "$" é uma atribuição de variavel
 
 $var = '<br>' . "Olá Mundo! $num";// O ponto (" . ") é o operador de concatenção
 
-echo $var;
+echo $var;//exibe $var na tela
 
 //echo '<br><br><h1> Café! </h1>';
 
 
-//var_dump($var);
+//var_dump($var); exibe infos sobre a variavel
 
 
 
@@ -39,7 +39,7 @@ $sexta = 'Sexta-feira';
 $sabado = 'Sábado';
 */
 
-//atribuição de váriaveis simplicado
+//atribuição de váriaveis simplicado (array)
 $diaSemana = [  'Domingo' , 
                 'Segunda-feira' , 
                 'Terça-feira',      
@@ -50,15 +50,15 @@ $diaSemana = [  'Domingo' ,
 
 
 
-$contatos = array 
+$contatos = array //jeito antigo de array
 (   'F' => 'Pai',
     'B' => 'Irmão',
     'C' => 'Primo'
 );
 
-echo '<br>Eu tenho um ' . $contatos['C']; // Exemplo sem interpolação
+echo '<br>Eu tenho um ' . $contatos['C']; // Exemplo de concatenaçao sem interpolação
 
-echo "<br>Fulano é meu {$contatos['F']}";//Exemplo com interpolação
+echo "<br>Fulano é meu {$contatos['F']}";//Exemplo de concatenaçao com interpolação
 
 /*
 $usuario = array (
