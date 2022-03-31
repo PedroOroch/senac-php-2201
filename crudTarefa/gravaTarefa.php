@@ -1,6 +1,6 @@
 <?php
 
-require 'conexao.php';
+require 'conexao.php'; //solicita um arquivo que tenha o banco de dados conectado
 
 $tarefa = $_POST['tarefa'];//Dado Inseguro
 

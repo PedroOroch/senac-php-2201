@@ -21,7 +21,7 @@ echo "<table border=1>";
             Descrição
         </td>";
     echo "</tr>";
-while($registro = $stmt->fetch(PDO::FETCH_ASSOC)){
+while($registro = $stmt->fetch(PDO::FETCH_ASSOC)){ //looping para exibir a matriz em forma de tabela, PDO::FETCH_ASSOC = Busca a próxima linha de um conjunto de resultados
     echo "<tr>";
         echo "<td>
             {$registro['id']}
