@@ -10,7 +10,7 @@ $usuario['Usuário'] = array('[
     {"Nome":"Bono","senha":627"^}
      ]',true);
 
-var_dump($usuario);
+var_dump($usuario); //exibe informações sobre variável
 
 */
 /*
@@ -42,7 +42,7 @@ echo '<table border="1">
             <td> Senha </td>
         </tr>';
 
-foreach ($usuario as $id => $value) {
+foreach ($usuario as $id => $value) { //estrutura de repetiçao para vetores
     echo "<tr>";
         echo "<td>";
             echo "$id";
