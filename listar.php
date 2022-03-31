@@ -1,6 +1,6 @@
 <?php
 
-$f = fopen('bancodedados.csv','r');
+$f = fopen('bancodedados.csv','r'); //abre um arquivo
 
 echo "<a href='index.php'>Voltar</a>";
 
@@ -9,9 +9,9 @@ echo "<table border='1'>
             <td>Nome</td><td>Repetições</td>
         </tr>";
 
-while($linha = fgets($f)){
+while($linha = fgets($f)){ //faz um looping usando informações adquiridas de um arquivo
     
-    $campos = explode(';', $linha);
+    $campos = explode(';', $linha); //explode divide strings em strings
     $nome = $campos[0];
     $rep = $campos[1];
     echo "<tr>
