@@ -1,9 +1,9 @@
 <?php
 
 //Conecta no Banco de Dados
-$dsn = 'mysql:dbname=php;host=localhost';
-$user = 'root';
-$pass = '';
+$dsn = 'mysql:dbname=php;host=localhost'; //localizando o banco de dados para conectar no php 
+$user = 'root'; //Username do banco de dados
+$pass = '';//password do banco de dados
 
 $bd = new PDO($dsn, $user, $pass);
 //Fim Conecta no Banco de Dados
