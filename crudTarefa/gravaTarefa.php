@@ -1,22 +1,45 @@
 <?php
+require 'controleDeAcesso.php';
 
-require 'conexao.php'; //solicita um arquivo que tenha o banco de dados conectado
+require 'conexao.php';
 
-$tarefa = $_POST['tarefa'];//Dado Inseguro
+$tarefa = $_POST['tarefa'];//Dado inseguro 
 
-//Código de Segurança
-    $stmt = ($bd->prepare("INSERT INTO tarefas (descricao) VALUES(:tarefa)"));//NÃO SE USA ASPAS PARA PREPARAR CONSULTAS
+$arquivoEnviado = '';
 
-    $stmt->bindParam(':tarefa', $tarefa);
-//Fim do código de segurança
+if($_FILES['figura']['error'] == 0 &&
+    $_FILES['figura']['size'] > 0){
 
-//INSERT
-if ($stmt->execute()){
+    $mimeType = mime_content_type($_FILES['figura']['tmp_name']);
+
+    var_dump($_FILES);
+
+    $campos = explode('/', $mimeType);
+
+    $tipo = $campos[0];
+
+    $ext = $campos[1];
+
+    if($tipo == 'image'){
+        $arquivoEnviado = 'imagem/' . $_FILES['figura']['name'] 
+
+                . '_' . md5(rand(-9999999, 9999999) . microtime()) 
+
+                    . '.' . $ext;
+        move_uploaded_file($_FILES['figura']['tmp_name'], "$arquivoEnviado");
+    }else{
+        echo "Arquivo ignorado por não se tratar de um arquivo de imagem<br>";
+    }
+}
+$stmt = $bd->prepare('INSERT INTO tarefas (descricao, imagem) VALUES (:tarefa, :imagem)');
+
+$stmt->bindParam(':tarefa', $tarefa);
+
+$stmt->bindParam(':imagem', $arquivoEnviado);
+
+if( $stmt->execute() ){
     echo "$tarefa gravada com sucesso!";
-} else {
+}else{
     echo "Problema ao gravar $tarefa";
 }
-//FIM
-echo "<br>";
-
-echo "<a href='formTarefa.php'>voltar</a>";
+echo "<br><a href='formTarefa.php'>Voltar</a>";
