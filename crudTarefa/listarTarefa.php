@@ -2,7 +2,7 @@
 
 require 'conexao.php';
 
-$stmt = $bd->query('SELECT id, descricao, imagem FROM tarefas');
+$stmt = $bd->query('SELECT id, descricao, imagem FROM tarefas WHERE apagado = 0');
 
 $stmt->execute();
 

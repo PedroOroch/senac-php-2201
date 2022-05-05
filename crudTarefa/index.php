@@ -12,6 +12,7 @@
         <ul>
             <li><a href="listarTarefa.php">Tarefa</a></li>
             <li><a href="listarUsuario.php">Usuarios</a></li>
+            <li><a href="lixeira.php">Lixeira</a></li>
         </ul>
     </div>
 </body>
