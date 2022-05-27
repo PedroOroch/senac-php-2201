@@ -1,28 +1,27 @@
 <?php
-class Calculadora {
+class Calculadora{
 
-    private float $n1;
-    private float $n2;
+    protected ?int $n1;
+    protected ?int $n2;
 
-    public function __construct($n1, $n2)
+    public function __construct( $n1, $n2)
     {
         $this->n1 = $n1;
-        $this->n2 = $n2;
+        $this->n2 = $n2; 
     }
 
-    public function soma()
+    public function soma():int
     {
         return $this->n1 + $this->n2;
     }
 
-    
-    public function subtracao()
+    public function subtracao():int
     {
         return $this->n1 - $this->n2;
     }
 
     public function __destruct()
     {
-        echo "Obrigado pela visita!";
+        echo "Obrigado pela visita";
     }
 }

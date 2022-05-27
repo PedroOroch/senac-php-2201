@@ -8,17 +8,17 @@
 </head>
 <body>
     <div>
-        <form action="" method="post">
-            <label for="num1">Número 1:</label>
-            <input type="text" name="num1" id="num1" value="<?php echo $n1; ?>">
-            <label for="num2">Número 2:</label>
-            <input type="text" name="num2" id="num2" value="<?php echo $n2; ?>">
-            <label for="operacao">Operacao</label>
+        <form method="POST">
+            <label for="num1">Número 1: </label>
+            <input type="text" id="num1" name="num1" value="<?php echo $n1; ?>">
+            <label for="num2">Número 2: </label>
+            <input type="text" id="num2" name="num2" value="<?php echo $n2; ?>">
+            <label for="operacao">Operação</label>
             <select name="operacao" id="operacao">
-                <option value="soma">Soma</option>
-                <option value="subtracao">Subtração</option>
-                <option value="multiplicacao">Multiplicação</option>
-                <option value="divisao">Divisão</option>
+                <option value="soma" <?php echo $_POST['operacao'] == 'soma' ? 'selected': ''; ?>>Somar</option>
+                <option value="subtracao" <?php echo $_POST['operacao'] == 'subtracao' ? 'selected': ''; ?>>Subtração</option>
+                <option value="multiplicacao" <?php echo $_POST['operacao'] == 'multiplicacao' ? 'selected': ''; ?>>Multiplicação</option>
+                <option value="divisao" <?php echo $_POST['operacao'] == 'divisao' ? 'selected': ''; ?>>Divisão</option>
             </select>
             <input type="submit" value="Calcular">
         </form>
